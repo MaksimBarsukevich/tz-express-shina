@@ -6,15 +6,8 @@ import './pagelayout.sass'
 
 export const shopsInfo = JSON.parse(JSON.stringify(myJSON))
 
-console.log(shopsInfo)
-
-
 
 const PageLayout = () => {
-
-// const shopsInfo = fetch(myJSON).then(r => r.json())
-
-
 
   return (
       <main className="contacts-page">
