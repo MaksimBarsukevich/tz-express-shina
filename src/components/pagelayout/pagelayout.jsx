@@ -9,11 +9,17 @@ export const shopsInfo = JSON.parse(JSON.stringify(myJSON))
 
 const PageLayout = () => {
 
+  const [targetCoordinates, setCoordinates] = useState({
+    targetLatitude: 56.838011,
+    targetLongitude: 60.597474,
+  });
+
   return (
       <main className="contacts-page">
         <section className="contacts-page__wrapper">
-          <ListSection/>
-          <MapSection/>
+          <ListSection setCoordinates={setCoordinates}/>
+          <MapSection targetCoordinates={targetCoordinates}/>
+          {console.log(targetCoordinates)}
         </section>
       </main>
   );

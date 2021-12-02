@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
 import { OfficeCard } from "../officeinfocard/officecard";
-import "./listofoffices.sass";
 import { shopsInfo } from "../pagelayout/pagelayout";
+import "./listofoffices.sass";
 
-
-
-export const ListSection = () => {
-  
+export const ListSection = (props) => {
   return (
     <div className="contacts-page__list-section">
       {shopsInfo.pickPoints.map((item) => (
-        <OfficeCard key={item.address} address={item.address} budgets={item.budgets}></OfficeCard>
+        <OfficeCard
+          key={item.address}
+          address={item.address}
+          budgets={item.budgets}
+          latitude={item.latitude}
+          longitude={item.longitude}
+          onClick={() =>
+            props.setCoordinates({
+              targetLatitude: item.latitude,
+              targetLongitude: item.longitude,
+            })
+          }
+        ></OfficeCard>
       ))}
     </div>
   );
