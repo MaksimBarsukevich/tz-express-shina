@@ -7,7 +7,6 @@ export const MapSection = (props) => {
   return (
     <div className="contacts-page__map-section">
       <YaMapMy targetCoordinates={props.targetCoordinates}></YaMapMy>
-      {console.log(props.coordinates)}
     </div>
   );
 };

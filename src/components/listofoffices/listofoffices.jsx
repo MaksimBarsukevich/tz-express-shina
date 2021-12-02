@@ -17,6 +17,7 @@ export const ListSection = (props) => {
             props.setCoordinates({
               targetLatitude: item.latitude,
               targetLongitude: item.longitude,
+              targetAddress: item.address
             })
           }
         ></OfficeCard>
